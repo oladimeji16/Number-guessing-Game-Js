@@ -16,13 +16,19 @@ const game = document.querySelector("#game"),
 minNum.textContent = min;
 maxNum.textContent = max;
 
+//eventlisteners for guess
+guessBtn.addEventListener("click", function () {
+  let guess = parseInt(guessInput.value);
+  //validate
+  if (isNaN(guess) || guess < min || guess > max) {
+    setMessage(`Please enter a number between ${min} and ${max}`, 'red');
+  }
+  // Check if won 
+  
+});
 
-//eventlisteners for guess 
-guessBtn.addEventListener('click', function () {
-    console.log(guessInput.value);
-    let gues = parseInt(guessInput.value);
-
-    //validate
-    
-    
-})
+//setMessage function
+function setMessage(msg, color) {
+  message.style.color = color;
+  message.textContent = msg;
+}
